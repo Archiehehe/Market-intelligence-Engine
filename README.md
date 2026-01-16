@@ -1,5 +1,5 @@
 # Market Intelligence Engine
-Live - **https://v0-marketintelligence.vercel.app**
+Live - **https://marketintelligenceengine.vercel.app/**
 
 A **narrative-centric market intelligence system** that helps you understand *what the market believes*, *why it believes it*, and *how exposed your portfolio is to those beliefs*.
 
@@ -104,6 +104,19 @@ This reframes risk entirely.
 
 ---
 
+### 5. Tools
+Includes 4 great tools that I've previously made all in one place: (seperate repos in my acc too)
+
+Narrative Terminal : https://marketnarrative.vercel.app/ 
+
+SnapJudgement : https://snapjudgement.vercel.app/
+
+DipSnipe : https://archiehehe.shinyapps.io/DipSnipe/
+
+Sector Momentum Tracker : https://archiehehe.shinyapps.io/SectorMomentumTracker/
+
+---
+
 ## Portfolio Intelligence (X, Y, Z)
 
 ### X — Narrative Exposure Mapping
@@ -143,12 +156,9 @@ Example insight:
 
 ## Architecture Overview
 
-This project is designed as an **LLM-native, state-first system**.
-
 ### Core Principles
 
 - Narratives are **event-sourced**
-- LLMs are **stateless transformers**
 - UI is a **projection**, not a calculator
 - No silent mutation of belief state
 
@@ -156,15 +166,13 @@ This project is designed as an **LLM-native, state-first system**.
 
 - **Frontend:** Next.js (App Router), v0 components
 - **UI Philosophy:** Calm, reflective, analytical
-- **Intelligence Layer:** Modular logic for narratives, beliefs, portfolios
-- **LLMs:** Used for extraction, synthesis, and critique — never as authorities
 - **Data Model:** Event-sourced narratives + rebuildable projections
 
 ---
 
 ## Live Demo
 
-👉 **https://v0-marketintelligence.vercel.app**
+👉 **https://marketintelligenceengine.vercel.app**
 
 The demo focuses on:
 - Narrative dashboards
