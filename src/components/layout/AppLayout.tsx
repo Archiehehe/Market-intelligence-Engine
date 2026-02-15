@@ -10,7 +10,9 @@ import {
   Menu,
   X,
   ChevronRight,
-  Zap
+  Zap,
+  Home,
+  Wrench
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -20,11 +22,13 @@ interface AppLayoutProps {
 }
 
 const navItems = [
-  { path: '/', label: 'Narratives', icon: LayoutDashboard, description: 'Active market beliefs' },
+  { path: '/', label: 'Dashboard', icon: Home, description: 'Market overview' },
+  { path: '/narratives', label: 'Narratives', icon: LayoutDashboard, description: 'Active market beliefs' },
   { path: '/belief-graph', label: 'Belief Graph', icon: Network, description: 'Narrative connections' },
   { path: '/portfolio', label: 'Portfolio', icon: Briefcase, description: 'Your exposure' },
   { path: '/assets', label: 'Assets', icon: TrendingUp, description: 'Individual tickers' },
   { path: '/chat', label: 'AI Chat', icon: MessageSquare, description: 'Explore with AI' },
+  { path: '/tools', label: 'Research Tools', icon: Wrench, description: 'Specialized analysis' },
 ];
 
 export function AppLayout({ children }: AppLayoutProps) {
