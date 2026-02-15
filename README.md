@@ -1,73 +1,165 @@
-# Welcome to your Lovable project
+# Market Intelligence Engine
 
-## Project info
+**Explain the market. Don’t predict it.**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Market Intelligence Engine is a narrative-centric market intelligence system that helps you understand **what the market believes**, **why it believes it**, and **how exposed your portfolio is to those beliefs** — without turning into a signal factory or a data dump.
 
-## How can I edit this code?
+Live Demo: https://marketintelligenceengine.vercel.app/  
+Repository: https://github.com/Archiehehe/Market-Intelligence-Engine
 
-There are several ways of editing your application.
+> This is a sensemaking tool — not a trading platform and not financial advice.
 
-**Use Lovable**
+* * *
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Core Philosophy
 
-Changes made via Lovable will be committed automatically to this repo.
+Most market tools do one of two things:
 
-**Use your preferred IDE**
+- **Predict prices**
+- **Display raw data**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This project does something different:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+> It explains market behavior using narrative + assumption attribution rather than prediction.
 
-Follow these steps:
+Key principles:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Markets move on **stories** and **positioning**, not just numbers  
+- There is no single “truth” — only **dominant explanations**  
+- Clarity > certainty  
+- Portfolios are bundles of **implicit beliefs**, whether you intended that or not
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+* * *
 
-# Step 3: Install the necessary dependencies.
-npm i
+## The Core Question
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+This engine is built to answer one focused question:
 
-**Edit a file directly in GitHub**
+> “What beliefs are driving this market (or this asset), how fragile are they, and what am I implicitly betting on?”
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+It does **not** attempt to answer:
 
-**Use GitHub Codespaces**
+- Should I buy or sell?
+- What will the price do next?
+- What is the optimal trade?
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* * *
 
-## What technologies are used for this project?
+## What the Engine Produces
 
-This project is built with:
+### 1) Narratives (First-Class Objects)
 
-- Vite
+A **narrative** is a structured market belief, e.g.:
+
+- “AI Capex Supercycle”
+- “Soft Landing”
+- “Higher for Longer”
+
+Each narrative can carry:
+
+- A confidence score
+- Supporting vs contradictory evidence
+- Explicit assumptions
+- Decay (beliefs weaken without reinforcement)
+- A history of how it evolved over time
+
+### 2) Assumptions (The Load-Bearers)
+
+Assumptions are the quiet claims inside narratives:
+
+- “Earnings will re-accelerate”
+- “Inflation will keep falling”
+- “Liquidity stays available”
+
+Making assumptions explicit lets you see:
+
+- What must be true for the narrative to hold
+- Which assumptions are doing the heavy lifting
+- Where your portfolio is unknowingly concentrated
+
+### 3) Belief Graph (Narratives Interact)
+
+Narratives reinforce, overlap, or conflict.
+
+The engine can represent this as a belief graph:
+
+- Nodes = narratives  
+- Edges = reinforcement / conflict  
+- Weights = belief strength  
+
+This surfaces hidden dependencies and fragile belief chains.
+
+### 4) Portfolios as Belief Structures
+
+Portfolios are not just sector weights.
+
+They’re **belief structures**.
+
+The goal is to surface:
+
+- Narrative exposure
+- Assumption concentration
+- Narrative drift (risk changes without trading)
+
+* * *
+
+## Portfolio Intelligence (X, Y, Z)
+
+### X — Narrative Exposure Mapping  
+Decomposes a portfolio into narrative weights (optionally confidence-adjusted).  
+This replaces sector-based thinking with belief-based thinking.
+
+### Y — Belief Concentration & Fragility  
+Detects narrative monocultures, overlapping assumptions, and single-point-of-failure beliefs.
+
+Example insight:
+
+> “41% of your portfolio depends on one fragile narrative.”
+
+### Z — Narrative Drift Tracking  
+Tracks how your risk shifts as beliefs change over time — even if prices stay flat.
+
+Example insight:
+
+> “Your portfolio risk increased because the ‘Soft Landing’ narrative weakened.”
+
+* * *
+
+## Included Tools (Bundled)
+
+This project brings multiple tools from my account into one place (each also has its own repo):
+
+- **Narrative Terminal** — https://marketnarrative.vercel.app/  
+- **SnapJudgement** — https://snapjudgement.vercel.app/  
+- **DipSnipe** — https://archiehehe.shinyapps.io/DipSnipe/  
+- **Sector Momentum Tracker** — https://archiehehe.shinyapps.io/SectorMomentumTracker/
+
+* * *
+
+## Architecture Overview
+
+### Core Principles
+
+- Narratives are **event-sourced**
+- The UI is a **projection**, not a calculator
+- No silent mutation of belief state
+
+### Stack
+
+- Next.js (App Router)
 - TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Tailwind + shadcn/ui
+- Vercel deployment
 
-## How can I deploy this project?
+* * *
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Local Development
 
-## Can I connect a custom domain to my Lovable project?
+> The repo uses a `pnpm-lock.yaml`, so **pnpm** is recommended.
 
-Yes, you can!
+```bash
+# install deps
+pnpm install
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# run dev server
+pnpm dev
