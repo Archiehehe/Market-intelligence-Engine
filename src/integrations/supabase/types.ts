@@ -14,7 +14,111 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      belief_edges: {
+        Row: {
+          from_narrative_id: string
+          id: string
+          relationship: string
+          strength: number
+          to_narrative_id: string
+        }
+        Insert: {
+          from_narrative_id: string
+          id: string
+          relationship: string
+          strength?: number
+          to_narrative_id: string
+        }
+        Update: {
+          from_narrative_id?: string
+          id?: string
+          relationship?: string
+          strength?: number
+          to_narrative_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "belief_edges_from_narrative_id_fkey"
+            columns: ["from_narrative_id"]
+            isOneToOne: false
+            referencedRelation: "narratives"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "belief_edges_to_narrative_id_fkey"
+            columns: ["to_narrative_id"]
+            isOneToOne: false
+            referencedRelation: "narratives"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      narratives: {
+        Row: {
+          affected_assets: Json
+          assumptions: Json
+          confidence_last_updated: string
+          confidence_score: number
+          confidence_trend: string
+          contradicting_evidence: Json
+          created_at: string
+          decay_half_life_days: number
+          decay_last_reinforced: string
+          history: Json
+          id: string
+          name: string
+          related_conflicts: string[]
+          related_overlaps: string[]
+          related_reinforces: string[]
+          summary: string
+          supporting_evidence: Json
+          tags: string[]
+          updated_at: string
+        }
+        Insert: {
+          affected_assets?: Json
+          assumptions?: Json
+          confidence_last_updated?: string
+          confidence_score?: number
+          confidence_trend?: string
+          contradicting_evidence?: Json
+          created_at?: string
+          decay_half_life_days?: number
+          decay_last_reinforced?: string
+          history?: Json
+          id: string
+          name: string
+          related_conflicts?: string[]
+          related_overlaps?: string[]
+          related_reinforces?: string[]
+          summary: string
+          supporting_evidence?: Json
+          tags?: string[]
+          updated_at?: string
+        }
+        Update: {
+          affected_assets?: Json
+          assumptions?: Json
+          confidence_last_updated?: string
+          confidence_score?: number
+          confidence_trend?: string
+          contradicting_evidence?: Json
+          created_at?: string
+          decay_half_life_days?: number
+          decay_last_reinforced?: string
+          history?: Json
+          id?: string
+          name?: string
+          related_conflicts?: string[]
+          related_overlaps?: string[]
+          related_reinforces?: string[]
+          summary?: string
+          supporting_evidence?: Json
+          tags?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
