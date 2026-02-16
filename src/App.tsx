@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
+import { PortfolioProvider } from "@/context/PortfolioContext";
 import MarketDashboard from "./pages/MarketDashboard";
 import NarrativeDashboard from "./pages/NarrativeDashboard";
 import BeliefGraph from "./pages/BeliefGraph";
@@ -21,18 +22,20 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AppLayout>
-          <Routes>
-            <Route path="/" element={<MarketDashboard />} />
-            <Route path="/narratives" element={<NarrativeDashboard />} />
-            <Route path="/belief-graph" element={<BeliefGraph />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/assets" element={<Assets />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/tools" element={<ResearchTools />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AppLayout>
+        <PortfolioProvider>
+          <AppLayout>
+            <Routes>
+              <Route path="/" element={<MarketDashboard />} />
+              <Route path="/narratives" element={<NarrativeDashboard />} />
+              <Route path="/belief-graph" element={<BeliefGraph />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/assets" element={<Assets />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/tools" element={<ResearchTools />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AppLayout>
+        </PortfolioProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
